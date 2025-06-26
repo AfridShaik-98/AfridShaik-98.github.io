@@ -15,26 +15,26 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #1e1e1e, #2e2e2e);
-      color: #e0e0e0;
+      background-color: #f4f5f7;
+      color: #1c1c1e;
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: #121212;
-      color: #e0e0e0;
+      background-color: #0a0a23;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
     .nav-left a,
     .nav-right a {
-      color: #e0e0e0;
+      color: white;
       text-decoration: none;
       margin: 0 12px;
       font-weight: 600;
@@ -47,19 +47,20 @@
     }
 
     .header {
-      background: linear-gradient(to right, #2c2c2c, #1f1f1f);
-      color: #ffffff;
+      background: #ffffff;
+      color: #1c1c1e;
       padding: 3rem 1rem;
       text-align: center;
+      border-bottom: 2px solid #e0e0e0;
     }
 
     .header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
 
     .header p {
       font-size: 1.2rem;
-      margin-top: 0.5rem;
     }
 
     .header .social-links {
@@ -67,9 +68,9 @@
     }
 
     .header .social-links a {
-      color: #ffffff;
+      color: #0a0a23;
       margin: 0 10px;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
 
     .container {
@@ -81,10 +82,10 @@
     section {
       margin-bottom: 3rem;
       padding: 2rem;
-      background: #1a1a1a;
-      border-left: 5px solid #444;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      background: #ffffff;
+      border-left: 4px solid #0a0a23;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
       transition: transform 0.5s ease, opacity 0.5s ease;
       opacity: 0;
       transform: translateY(50px);
@@ -96,12 +97,12 @@
     }
 
     h1, h2, h3, h4, h5, h6 {
-      color: #ffffff;
+      color: #0a0a23;
     }
 
     section h2 {
       margin-bottom: 1rem;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
     }
 
     ul {
@@ -119,22 +120,23 @@
 
     footer {
       text-align: center;
-      background: #121212;
-      color: #e0e0e0;
+      background: #0a0a23;
+      color: white;
       padding: 1.5rem 0;
     }
 
     .graphic-placeholder {
       text-align: center;
       padding: 2rem;
-      font-style: normal;
-      color: #bbb;
     }
 
-    .graphic-placeholder img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    .graphic-placeholder iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -157,7 +159,7 @@
   <div class="header">
     <h1>Shaik Mahammed Afrid</h1>
     <p>Automation Test Engineer | QA Specialist | Banking Domain</p>
-    <p>📧 <a style="color: #fff;" href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📍 Bengaluru, India</p>
+    <p>📧 <a style="color: #0a0a23;" href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📍 Bengaluru, India</p>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -224,13 +226,13 @@
     </section>
 
     <div class="graphic-placeholder">
-      <h2>📊 Sample Test Report</h2>
-      <img src="https://raw.githubusercontent.com/AfridShaik-98/Selenium-Full/main/sample-report.png" alt="Sample Test Report">
+      <h2>📊 Automation Framework Overview</h2>
+      <iframe src="https://www.youtube.com/embed/O5BzG1k9C68" allowfullscreen title="Automation Demo"></iframe>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Shaik Mahammed Afrid 
+    &copy; 2025 Shaik Mahammed Afrid | Built with ❤️ using HTML & CSS
   </footer>
 
   <script>
