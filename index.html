@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shaik Mahammed Afrid | QA Portfolio</title>
   <meta name="description" content="Shaik Mahammed Afrid - Automation Test Engineer." />
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/AfridShaik-98/AfridShaik-98.github.io/main/favicon.png" />
+  <link rel="icon" href="https://raw.githubusercontent.com/AfridShaik-98/AfridShaik-98.github.io/main/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     * {
@@ -18,6 +18,7 @@
       overflow-x: hidden;
     }
 
+    /* Preloader */
     #preloader {
       position: fixed; inset: 0; background: #0a0a23;
       display: flex; align-items: center; justify-content: center;
@@ -31,45 +32,34 @@
       animation: spin 1s linear infinite;
     }
     @keyframes spin {
-      0% { transform: rotate(0); } 100% { transform: rotate(360deg); }
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
     }
 
-    .nav-buttons a:hover {
-      animation: bounce 0.5s;
-      transform: scale(1.05);
-      background-color: #2d2d6a;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    .social-links a:hover {
-      animation: pulse 1s infinite;
-      background-color: #1d1d5c;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
+    /* Scroll progress bar */
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: #00bcd4;
+      width: 0%;
+      z-index: 999;
     }
 
-    .fade-up {
+    .fade-up, .slide-left, .slide-right {
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.7s ease-out;
     }
-    .fade-up.show {
+    .fade-up.show, .slide-left.show, .slide-right.show {
       opacity: 1;
       transform: translateY(0);
     }
+    .slide-left { transform: translateX(-50px); }
+    .slide-right { transform: translateX(50px); }
 
-    section:hover {
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-      transform: translateY(-3px);
-      transition: 0.3s ease-out;
-    }
-
+    /* Header */
     .header {
       background: #fff; color: #1c1c1e;
       text-align: center; padding: 3rem 1rem;
@@ -107,16 +97,55 @@
       display: flex; justify-content: space-between;
       align-items: center; flex-wrap: wrap;
     }
-    .nav-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .nav-buttons, .top-contact {
+      display: flex; flex-wrap: wrap; gap: 12px;
+    }
     .nav-buttons a, .top-contact a {
       background: #1f1f3d; color: #fff;
       padding: 6px 12px; border-radius: 5px;
       font-size: 0.9rem; font-weight: 600;
-      text-decoration: none; position: relative;
-      overflow: hidden;
+      text-decoration: none;
     }
-    .top-contact { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-    .top-contact i { margin-right: 5px; }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #fff;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #0a0a23;
+      height: 100%;
+      width: 75%;
+      max-width: 280px;
+      padding: 2rem;
+      z-index: 999;
+      transform: translateX(-100%);
+      transition: 0.3s ease-in-out;
+    }
+    .mobile-menu.show {
+      transform: translateX(0);
+    }
+    .mobile-menu a {
+      display: block;
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      text-decoration: none;
+      padding: 10px;
+      background: #1f1f3d;
+      border-radius: 5px;
+    }
 
     .social-links {
       margin-top: 1.5rem;
@@ -133,7 +162,6 @@
     .container {
       width: 85%; margin: auto;
       padding: 2rem 0;
-      transition: 0.3s ease;
     }
     section {
       margin-bottom: 3rem;
@@ -142,7 +170,6 @@
       border-left: 4px solid #0a0a23;
       border-radius: 8px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
     }
     h2 { color: #0a0a23; margin-bottom: 1rem; font-size: 1.9rem; }
     ul { list-style: none; }
@@ -154,26 +181,35 @@
       text-align: center; padding: 1.5rem 0;
     }
 
-    /* Mobile Styles */
     @media (max-width: 600px) {
-      .header h1 { font-size: 2rem; }
-      .typewriter { font-size: 1rem; }
-      .profile-pic { width: 100px; height: 100px; }
+      .top-footer { display: none; }
+      .hamburger { display: block; }
       .container { width: 95%; padding: 1rem 0; }
       section { padding: 1rem; }
       .social-links { flex-direction: column; gap: 10px; }
       .social-links a { width: 100%; text-align: center; }
-      .nav-buttons a, .top-contact a { font-size: 0.8rem; padding: 5px 10px; }
-
-      /* Hide the top footer on mobile only */
-      .top-footer {
-        display: none;
-      }
     }
   </style>
 </head>
 <body>
   <div id="preloader"><div class="loader"></div></div>
+  <div id="progressBar"></div>
+
+  <!-- Hamburger Button -->
+  <button class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#objective">🎯 Objective</a>
+    <a href="#skills">🛠️ Skills</a>
+    <a href="#experience">💼 Experience</a>
+    <a href="#education">🎓 Education</a>
+    <a href="#recognition">🏆 Recognition</a>
+    <a href="https://linkedin.com/in/shaik-mahammed-afrid" target="_blank">🔗 LinkedIn</a>
+    <a href="tel:+919133083182">📞 Call</a>
+  </div>
 
   <div class="top-footer">
     <div class="nav-buttons">
@@ -201,13 +237,11 @@
   </div>
 
   <div class="container">
-    <section id="objective" class="fade-up">
-      <h2>🎯 Objective</h2>
+    <section id="objective" class="slide-left"><h2>🎯 Objective</h2>
       <p>Techno-functional expert with 3+ years in IT, skilled in functional and automation testing using Selenium, Appium, Java, TestNG and Cucumber...</p>
     </section>
 
-    <section id="skills" class="fade-up">
-      <h2>🛠️ Key Skills</h2>
+    <section id="skills" class="slide-right"><h2>🛠️ Key Skills</h2>
       <ul>
         <li>Selenium WebDriver, Appium, Java, TestNG, Maven</li>
         <li>Functional Testing, Regression Testing, TDD, Agile, Scrum, Waterfall</li>
@@ -216,8 +250,7 @@
       </ul>
     </section>
 
-    <section id="experience" class="fade-up">
-      <h2>💼 Work Experience</h2>
+    <section id="experience" class="slide-left"><h2>💼 Work Experience</h2>
       <h3>Senior Software Test Engineer – Dyashin (Apr 2024 – Present)</h3>
       <ul>
         <li>Led testing of course catalog, dashboards, admin portals with real-time notifications & payments.</li>
@@ -237,13 +270,11 @@
       </ul>
     </section>
 
-    <section id="education" class="fade-up">
-      <h2>🎓 Education</h2>
+    <section id="education" class="slide-right"><h2>🎓 Education</h2>
       <p><strong>B.Tech in Electrical & Electronics Engineering</strong> (2018–2021)<br/>G. Pullaiah College of Engineering & Technology, JNTU Anantapur</p>
     </section>
 
-    <section id="recognition" class="fade-up">
-      <h2>🏆 Recognition & Accomplishments</h2>
+    <section id="recognition" class="slide-left"><h2>🏆 Recognition & Accomplishments</h2>
       <ul>
         <li>Commendation for flawless banking payment feature validation.</li>
         <li>Streamlined regression testing via CI/CD, reducing test cycle by 20%.</li>
@@ -265,10 +296,25 @@
       document.getElementById("preloader").style.display = "none";
     });
 
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('show');
+    }
+
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('show');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up, .slide-left, .slide-right').forEach(el => observer.observe(el));
+
+    // Scroll progress
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById("progressBar").style.width = progress + "%";
+    });
   </script>
 </body>
 </html>
