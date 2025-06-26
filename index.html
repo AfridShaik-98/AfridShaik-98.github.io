@@ -82,53 +82,9 @@
       font-size: 1.5rem;
     }
 
-    .container {
-      width: 85%;
-      margin: auto;
-      padding: 2rem 0;
-    }
-
-    section {
-      margin-bottom: 3rem;
-      padding: 2rem;
-      background: #ffffff;
-      border-left: 4px solid #0a0a23;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      transition: transform 0.5s ease, opacity 0.5s ease;
-      opacity: 0;
-      transform: translateY(50px);
-    }
-
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      color: #0a0a23;
-    }
-
-    section h2 {
-      margin-bottom: 1rem;
-      font-size: 1.9rem;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "\1F4A1 ";
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
     .button-box {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
       margin-top: 30px;
@@ -167,30 +123,54 @@
       opacity: 1;
     }
 
+    .container {
+      width: 85%;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: #ffffff;
+      border-left: 4px solid #0a0a23;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #0a0a23;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.9rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "\1F4A1 ";
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
     footer {
       text-align: center;
       background: #0a0a23;
       color: white;
       padding: 1.5rem 0;
     }
-
-    .graphic-placeholder {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .graphic-placeholder iframe {
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
   </style>
 </head>
 <body>
-
   <nav>
     <div class="nav-left">
       <a href="#objective">🎯 Objective</a>
@@ -215,9 +195,11 @@
       <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
     <div class="button-box">
-      <button data-tooltip="View my LinkedIn profile">LinkedIn</button>
-      <button data-tooltip="Explore my GitHub repositories">GitHub</button>
-      <button data-tooltip="Download my resume PDF">Download Resume</button>
+      <button onclick="document.getElementById('objective').scrollIntoView()" data-tooltip="View my career goals">Objective</button>
+      <button onclick="document.getElementById('skills').scrollIntoView()" data-tooltip="See what tools I use">Skills</button>
+      <button onclick="document.getElementById('experience').scrollIntoView()" data-tooltip="Explore my work history">Experience</button>
+      <button onclick="document.getElementById('education').scrollIntoView()" data-tooltip="View my educational background">Education</button>
+      <button onclick="document.getElementById('recognition').scrollIntoView()" data-tooltip="Achievements and awards">Recognition</button>
     </div>
   </div>
 
@@ -245,20 +227,17 @@
         <li>Executed cross-browser and cross-device testing, coordinated team planning and test delivery.</li>
         <li>Mentored junior testers and presented reports to stakeholders.</li>
       </ul>
-
       <h3>Senior Software Test Engineer – LBB (Lightning Broadband) @ OneBill</h3>
       <ul>
         <li>Led functional testing of mobile apps (Android/iOS), ensuring smooth payment gateway integration and user support.</li>
         <li>Tested multilingual UI, account management, usage tracking, and help center features.</li>
       </ul>
-
       <h3>Associate Software Engineer – TestYantra (Feb 2022 – Apr 2023)</h3>
       <ul>
         <li>Managed complete QA lifecycle for VISTA banking application (PayNext, Yes Bank, Paytm).</li>
         <li>Led end-to-end testing of modules like NETC, M-Portal, User Management.</li>
         <li>Used GitLab for bug tracking, wrote test plans and attended client demos.</li>
       </ul>
-
       <h3>Additional Projects:</h3>
       <ul>
         <li>ServiceDesk App – Manual + Appium Automation, CI/CD with Jenkins + GitHub</li>
@@ -279,28 +258,11 @@
         <li>Recognized for UI/UX QA insights that improved end-user accessibility.</li>
       </ul>
     </section>
-
-    <div class="graphic-placeholder">
-      <h2>📊 Automation Framework Overview</h2>
-      <iframe src="https://www.youtube.com/embed/O5BzG1k9C68" allowfullscreen title="Automation Demo"></iframe>
-    </div>
   </div>
 
   <footer>
-    &copy; 2025 Shaik Mahammed Afrid 
+    &copy; 2025 Shaik Mahammed Afrid | Built with ❤️ using HTML & CSS
   </footer>
-
-  <script>
-    const sections = document.querySelectorAll("section");
-    window.addEventListener("scroll", () => {
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.85) {
-          section.classList.add("show");
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>
