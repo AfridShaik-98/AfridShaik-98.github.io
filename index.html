@@ -17,8 +17,7 @@
       background: #f4f5f7; color: #1c1c1e;
       overflow-x: hidden;
     }
-    
-    /* Preloader */
+
     #preloader {
       position: fixed; inset: 0; background: #0a0a23;
       display: flex; align-items: center; justify-content: center;
@@ -34,8 +33,7 @@
     @keyframes spin {
       0% { transform: rotate(0); } 100% { transform: rotate(360deg); }
     }
-    
-    /* Bounce nav link */
+
     .nav-buttons a:hover {
       animation: bounce 0.5s;
       transform: scale(1.05);
@@ -45,8 +43,7 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-5px); }
     }
-    
-    /* Pulse social icons */
+
     .social-links a:hover {
       animation: pulse 1s infinite;
       background-color: #1d1d5c;
@@ -56,8 +53,7 @@
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
-    
-    /* Fade sections on scroll */
+
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -67,15 +63,13 @@
       opacity: 1;
       transform: translateY(0);
     }
-    
-    /* Section hover shadow */
+
     section:hover {
       box-shadow: 0 6px 16px rgba(0,0,0,0.12);
       transform: translateY(-3px);
       transition: 0.3s ease-out;
     }
-    
-    /* Header */
+
     .header {
       background: #fff; color: #1c1c1e;
       text-align: center; padding: 3rem 1rem;
@@ -106,8 +100,7 @@
       from, to { border-color: transparent; }
       50% { border-color: #1c1c1e; }
     }
-    
-    /* Layout */
+
     .top-footer {
       background: #0a0a23; position: sticky; top: 0;
       z-index: 998; padding: 0.7rem 1rem;
@@ -124,7 +117,7 @@
     }
     .top-contact { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .top-contact i { margin-right: 5px; }
-    
+
     .social-links {
       margin-top: 1.5rem;
       display: flex; gap: 20px;
@@ -136,7 +129,7 @@
       font-weight: 600; font-size: 1rem;
       text-decoration: none;
     }
-    
+
     .container {
       width: 85%; margin: auto;
       padding: 2rem 0;
@@ -155,13 +148,13 @@
     ul { list-style: none; }
     ul li::before { content: "💡 "; }
     li { margin-bottom: 0.5rem; }
-    
+
     footer {
       background: #0a0a23; color: #fff;
       text-align: center; padding: 1.5rem 0;
     }
-    
-    /* Mobile */
+
+    /* Mobile Styles */
     @media (max-width: 600px) {
       .header h1 { font-size: 2rem; }
       .typewriter { font-size: 1rem; }
@@ -171,12 +164,24 @@
       .social-links { flex-direction: column; gap: 10px; }
       .social-links a { width: 100%; text-align: center; }
       .nav-buttons a, .top-contact a { font-size: 0.8rem; padding: 5px 10px; }
+
+      /* Adjust top bar layout */
+      .top-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .top-contact {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+      }
     }
   </style>
 </head>
 <body>
   <div id="preloader"><div class="loader"></div></div>
-  
+
   <div class="top-footer">
     <div class="nav-buttons">
       <a href="#objective">Objective</a>
@@ -190,7 +195,7 @@
       <a href="tel:+919133083182"><i class="fas fa-phone-alt"></i> +91 91330 83182</a>
     </div>
   </div>
-  
+
   <div class="header fade-up">
     <img src="3M6A3911.jpg" alt="Shaik Afrid" class="profile-pic">
     <h1>Shaik Mahammed Afrid</h1>
@@ -201,7 +206,7 @@
       <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </div>
-  
+
   <div class="container">
     <section id="objective" class="fade-up">
       <h2>🎯 Objective</h2>
@@ -226,14 +231,12 @@
         <li>Cross-browser and cross-device testing, team coordination, stakeholder reporting.</li>
         <li>Mentored junior testers.</li>
       </ul>
-
       <h3>Associate Software Engineer – TestYantra (Feb 2022 – Apr 2024)</h3>
       <ul>
         <li>Managed QA lifecycle for VISTA banking app (PayNext, Yes Bank, Paytm).</li>
         <li>Led end-to-end testing of NETC, M‑Portal, User Management.</li>
         <li>Used GitLab for bug tracking and demo presentations.</li>
       </ul>
-
       <h3>Projects:</h3>
       <ul>
         <li>ServiceDesk App – Manual & Appium automation with CI/CD (Jenkins + GitHub)</li>
@@ -255,7 +258,7 @@
       </ul>
     </section>
   </div>
-  
+
   <footer>
     <div>
       &copy; Shaik Mahammed Afrid |
@@ -263,7 +266,7 @@
       <a href="https://linkedin.com/in/shaik-mahammed-afrid" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
     </div>
   </footer>
-  
+
   <script>
     window.addEventListener("load", () => {
       document.getElementById("preloader").style.display = "none";
