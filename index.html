@@ -83,6 +83,9 @@
       left: 10px;
       z-index: 1001;
     }
+    .hamburger.show {
+      display: block;
+    }
     .mobile-menu {
       display: none;
       position: fixed;
@@ -169,15 +172,18 @@
 
       hamburger.addEventListener('click', () => {
         mobileMenu.classList.add('show');
+        hamburger.style.display = 'none';
       });
 
       closeBtn.addEventListener('click', () => {
         mobileMenu.classList.remove('show');
+        hamburger.style.display = 'block';
       });
 
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.remove('show');
+          hamburger.style.display = 'block';
         });
       });
     });
