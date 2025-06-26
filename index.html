@@ -91,7 +91,7 @@
       height: 100%;
       width: 75%;
       max-width: 280px;
-      padding: 2rem;
+      padding: 2rem 1rem;
       z-index: 1000;
       transform: translateX(-100%);
       transition: 0.3s ease-in-out;
@@ -99,9 +99,6 @@
     .mobile-menu.show {
       display: block;
       transform: translateX(0);
-    }
-    .mobile-menu.show + .hamburger {
-      display: none !important;
     }
     .mobile-menu a {
       display: block;
@@ -112,6 +109,15 @@
       padding: 10px;
       background: #1f1f3d;
       border-radius: 5px;
+    }
+    .mobile-menu .close-btn {
+      background: #ff4444;
+      font-weight: bold;
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      margin-top: 1rem;
     }
 
     .container { width: 85%; margin: auto; padding: 2rem 0; }
@@ -171,6 +177,7 @@
     <a href="#recognition">🏆 Recognition & Accomplishments</a>
     <a href="https://linkedin.com/in/shaik-mahammed-afrid" target="_blank">🔗 LinkedIn</a>
     <a href="tel:+919133083182">📞 Call</a>
+    <div class="close-btn" onclick="toggleMenu()">✖ Close</div>
   </div>
 
   <div class="top-footer">
@@ -199,11 +206,13 @@
   </div>
 
   <div class="container">
+    <!-- Objective -->
     <section id="objective">
       <h2>🎯 Objective</h2>
       <p>Techno-functional expert with 3+ years in IT, skilled in functional and automation testing using Selenium, Appium, Java, TestNG and Cucumber...</p>
     </section>
 
+    <!-- Skills -->
     <section id="skills">
       <h2>🛠️ Key Skills</h2>
       <ul>
@@ -214,6 +223,7 @@
       </ul>
     </section>
 
+    <!-- Experience -->
     <section id="experience">
       <h2>💼 Work Experience</h2>
       <h3>Senior Software Test Engineer – Dyashin (Apr 2024 – Present)</h3>
@@ -230,11 +240,13 @@
       </ul>
     </section>
 
+    <!-- Education -->
     <section id="education">
       <h2>🎓 Education</h2>
       <p><strong>B.Tech in Electrical & Electronics Engineering</strong> (2018–2021)<br/>G. Pullaiah College of Engineering & Technology, JNTU Anantapur</p>
     </section>
 
+    <!-- Recognition -->
     <section id="recognition">
       <h2>🏆 Recognition & Accomplishments</h2>
       <ul>
@@ -249,7 +261,7 @@
     <div>
       &copy; Shaik Mahammed Afrid |
       <a href="mailto:Shaikafrid0988@gmail.com">📧 Shaikafrid0988@gmail.com</a> |
-      <a href="https://linkedin.com/in/shaik-mahammed-afrid" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      <a href="https://linkedin.com/in/shaik-mahammed-afrid" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
   </footer>
 
@@ -260,13 +272,9 @@
 
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
-      const button = document.getElementById('hamburger');
+      const hamburger = document.getElementById('hamburger');
       menu.classList.toggle('show');
-      if (menu.classList.contains('show')) {
-        button.style.display = 'none';
-      } else {
-        button.style.display = 'block';
-      }
+      hamburger.style.display = menu.classList.contains('show') ? 'none' : 'block';
     }
 
     window.addEventListener("scroll", () => {
