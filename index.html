@@ -23,7 +23,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: #0a1f44; /* dark navy blue */
+      background-color: #0a1f44;
       color: white;
       display: flex;
       justify-content: space-between;
@@ -60,6 +60,16 @@
     .header p {
       font-size: 1.2rem;
       margin-top: 0.5rem;
+    }
+
+    .header .social-links {
+      margin-top: 1rem;
+    }
+
+    .header .social-links a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.4rem;
     }
 
     .container {
@@ -107,17 +117,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .links a {
-      display: inline-block;
-      margin: 0 10px;
-      color: #0d6efd;
-      font-size: 1.2rem;
-    }
-
-    .links a:hover {
-      color: #0056b3;
-    }
-
     footer {
       text-align: center;
       background: #0a1f44;
@@ -142,7 +141,6 @@
       <a href="#experience">💼 Experience</a>
       <a href="#education">🎓 Education</a>
       <a href="#recognition">🏆 Recognition</a>
-      <a href="#contact">📬 Contact</a>
     </div>
     <div class="nav-right">
       <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -154,6 +152,10 @@
     <h1>Shaik Mahammed Afrid</h1>
     <p>Automation Test Engineer | QA Specialist | Banking Domain</p>
     <p>📧 <a style="color: #fff;" href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📍 Bengaluru, India</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
   </div>
 
   <div class="container">
@@ -166,14 +168,39 @@
       <h2>🛠️ Key Skills</h2>
       <ul>
         <li>Selenium WebDriver, Appium, Java, TestNG, Maven</li>
-        <li>Functional Testing, Regression Testing, TDD, Agile, Scrum</li>
-        <li>Postman, Mainframes, Android Studio, Waterfall</li>
+        <li>Functional Testing, Regression Testing, TDD, Agile, Scrum, Waterfall</li>
+        <li>Postman, Mainframes, Android Studio</li>
+        <li>Automation Scripting, CI/CD, GitHub, Jenkins</li>
       </ul>
     </section>
 
     <section id="experience">
       <h2>💼 Work Experience</h2>
-      <p>Detailed roles and projects at DSEdify, LBB (OneBill), Testyantra including mobile/web testing, payment gateways, dashboards, mentoring testers, and automation with CI/CD.</p>
+      <h3>Senior Software Test Engineer – DSEdify @ Dyashin (Apr 2024 – Present)</h3>
+      <ul>
+        <li>Led testing of course catalog, dashboards, and admin portals with real-time notifications and payments.</li>
+        <li>Executed cross-browser and cross-device testing, coordinated team planning and test delivery.</li>
+        <li>Mentored junior testers and presented reports to stakeholders.</li>
+      </ul>
+
+      <h3>Senior Software Test Engineer – LBB (Lightning Broadband) @ OneBill</h3>
+      <ul>
+        <li>Led functional testing of mobile apps (Android/iOS), ensuring smooth payment gateway integration and user support.</li>
+        <li>Tested multilingual UI, account management, usage tracking, and help center features.</li>
+      </ul>
+
+      <h3>Associate Software Engineer – TestYantra (Feb 2022 – Apr 2023)</h3>
+      <ul>
+        <li>Managed complete QA lifecycle for VISTA banking application (PayNext, Yes Bank, Paytm).</li>
+        <li>Led end-to-end testing of modules like NETC, M-Portal, User Management.</li>
+        <li>Used GitLab for bug tracking, wrote test plans and attended client demos.</li>
+      </ul>
+
+      <h3>Additional Projects:</h3>
+      <ul>
+        <li>ServiceDesk App – Manual + Appium Automation, CI/CD with Jenkins + GitHub</li>
+        <li>Dyashin Website – Functional & cross-browser testing for content, navigation, and responsiveness</li>
+      </ul>
     </section>
 
     <section id="education">
@@ -184,21 +211,14 @@
     <section id="recognition">
       <h2>🏆 Recognition & Accomplishments</h2>
       <ul>
-        <li>Received client commendation for validating critical functionality with precision.</li>
-        <li>Led successful end-to-end test cycles improving app quality significantly.</li>
+        <li>Received commendation for validating critical banking payment features flawlessly.</li>
+        <li>Streamlined regression testing using CI/CD and automation tools, reducing test cycle time by 20%.</li>
+        <li>Recognized for UI/UX QA insights that improved end-user accessibility.</li>
       </ul>
     </section>
 
-    <section id="contact">
-      <h2>📬 Connect with Me</h2>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-    </section>
-
     <div class="graphic-placeholder">
-      📊 [You can embed test report images, charts, or GitHub workflow screenshots here.]
+      📊 [Embed screenshots or reports: Jenkins pipelines, Selenium scripts, or mobile app testing dashboards.]
     </div>
   </div>
 
@@ -217,5 +237,6 @@
       });
     });
   </script>
+
 </body>
 </html>
