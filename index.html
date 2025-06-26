@@ -63,6 +63,15 @@
       font-size: 1.2rem;
     }
 
+    .header .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0a0a23;
+      margin-bottom: 1rem;
+    }
+
     .header .social-links {
       margin-top: 1rem;
     }
@@ -118,6 +127,46 @@
       margin-bottom: 0.5rem;
     }
 
+    .button-box {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .button-box button {
+      background-color: #0a0a23;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      position: relative;
+    }
+
+    .button-box button::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .button-box button:hover::after {
+      opacity: 1;
+    }
+
     footer {
       text-align: center;
       background: #0a0a23;
@@ -157,12 +206,18 @@
   </nav>
 
   <div class="header">
+    <img src="3M6A3911.jpg" alt="Shaik Afrid" class="profile-pic">
     <h1>Shaik Mahammed Afrid</h1>
     <p>Automation Test Engineer | QA Specialist | Banking Domain</p>
     <p>📧 <a style="color: #0a0a23;" href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📍 Bengaluru, India</p>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+    <div class="button-box">
+      <button data-tooltip="View my LinkedIn profile">LinkedIn</button>
+      <button data-tooltip="Explore my GitHub repositories">GitHub</button>
+      <button data-tooltip="Download my resume PDF">Download Resume</button>
     </div>
   </div>
 
@@ -225,7 +280,11 @@
       </ul>
     </section>
 
-   
+    <div class="graphic-placeholder">
+      <h2>📊 Automation Framework Overview</h2>
+      <iframe src="https://www.youtube.com/embed/O5BzG1k9C68" allowfullscreen title="Automation Demo"></iframe>
+    </div>
+  </div>
 
   <footer>
     &copy; 2025 Shaik Mahammed Afrid | Built with ❤️ using HTML & CSS
