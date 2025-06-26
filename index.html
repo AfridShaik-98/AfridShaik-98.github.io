@@ -23,24 +23,26 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: #0d6efd;
+      background-color: #0a1f44; /* dark navy blue */
       color: white;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      padding: 1rem 2rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    nav a {
+    .nav-left a,
+    .nav-right a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+      margin: 0 12px;
+      font-weight: 600;
       transition: 0.3s;
     }
 
-    nav a:hover {
+    .nav-left a:hover,
+    .nav-right a:hover {
       text-decoration: underline;
     }
 
@@ -73,12 +75,20 @@
       border-left: 5px solid #0d6efd;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     section h2 {
       margin-bottom: 1rem;
       font-size: 1.8rem;
-      color: #0d6efd;
+      color: #0a1f44;
     }
 
     ul {
@@ -94,11 +104,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .links {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
     .links a {
       display: inline-block;
       margin: 0 10px;
@@ -112,7 +117,7 @@
 
     footer {
       text-align: center;
-      background: #0d6efd;
+      background: #0a1f44;
       color: white;
       padding: 1.5rem 0;
     }
@@ -120,20 +125,26 @@
     .graphic-placeholder {
       text-align: center;
       padding: 2rem;
-      color: #888;
       font-style: italic;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#objective">🎯 Objective</a>
-    <a href="#skills">🛠️ Skills</a>
-    <a href="#experience">💼 Experience</a>
-    <a href="#education">🎓 Education</a>
-    <a href="#recognition">🏆 Recognition</a>
-    <a href="#contact">📬 Contact</a>
+    <div class="nav-left">
+      <a href="#objective">🎯 Objective</a>
+      <a href="#skills">🛠️ Skills</a>
+      <a href="#experience">💼 Experience</a>
+      <a href="#education">🎓 Education</a>
+      <a href="#recognition">🏆 Recognition</a>
+      <a href="#contact">📬 Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
   </nav>
 
   <div class="header">
@@ -143,64 +154,33 @@
   </div>
 
   <div class="container">
-
-    <section id="objective">
-      <h2>🎯 Objective</h2>
-      <p>Techno-functional QA expert with 3+ years of experience in functional & automation testing using Selenium, Appium, TestNG, Java, Cucumber. Specialized in banking domain projects and mobile/web app validation.</p>
-    </section>
-
-    <section id="skills">
-      <h2>🛠️ Key Skills</h2>
-      <ul>
-        <li>Selenium WebDriver, Appium, Java</li>
-        <li>TestNG, Maven, Cucumber, TDD</li>
-        <li>Postman, Mainframes, Android Studio</li>
-        <li>Manual Testing, Regression Testing, Agile/Scrum</li>
-        <li>GitHub, Jenkins, CI/CD Integration</li>
-      </ul>
-    </section>
-
-    <section id="experience">
-      <h2>💼 Work Experience</h2>
-
-      <h3>🔹 Senior Software Test Engineer @ Dyashin (Apr 2024 – Present)</h3>
-      <p>✅ Built and tested real-time dashboards, enrollment systems, payment flows & admin portal with detailed test cases.</p>
-
-      <h3>🔹 Associate Software Engineer @ Testyantra (Feb 2022 – Apr 2023)</h3>
-      <p>✅ Tested critical banking modules (VISTA - PayNext, Paytm, Yes Bank) and led test teams on client-facing projects.</p>
-    </section>
-
-    <section id="education">
-      <h2>🎓 Education</h2>
-      <p><strong>B.Tech in Electrical & Electronics Engineering (2018 – 2021)</strong></p>
-      <p>G. Pullaiah College of Engineering & Technology, JNTU Anantapur</p>
-    </section>
-
-    <section id="recognition">
-      <h2>🏆 Recognition & Accomplishments</h2>
-      <ul>
-        <li>Received client commendation for validating critical payment functionality.</li>
-        <li>Improved regression testing pipeline by 20% using CI/CD automation.</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>📬 Connect with Me</h2>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-    </section>
+    <section id="objective"><h2>🎯 Objective</h2><p>Techno-functional QA expert with 3+ years of experience...</p></section>
+    <section id="skills"><h2>🛠️ Key Skills</h2><ul><li>Selenium WebDriver...</li></ul></section>
+    <section id="experience"><h2>💼 Work Experience</h2><h3>🔹 Senior Software Test Engineer @ DSEdify...</h3></section>
+    <section id="education"><h2>🎓 Education</h2><p><strong>B.Tech in EEE...</strong></p></section>
+    <section id="recognition"><h2>🏆 Recognition & Accomplishments</h2><ul><li>Received client commendation...</li></ul></section>
+    <section id="contact"><h2>📬 Connect with Me</h2><div class="links">[Already in Nav]</div></section>
 
     <div class="graphic-placeholder">
-      🌐 [Placeholder: Add graphs, charts or screenshots of frameworks/test reports here]
+      📊 [Add animated charts or screenshots here using frameworks like Chart.js, or Lottie animations]
     </div>
-
   </div>
 
   <footer>
     &copy; 2025 Shaik Mahammed Afrid | Built with ❤️ & Java
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.85) {
+          section.classList.add("show");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
