@@ -20,61 +20,7 @@
     }
 
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: #0a0a23;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-
-    nav .button-box {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .button-box button {
-      background-color: #ffffff;
-      color: #0a0a23;
-      border: 2px solid #ffffff;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease;
-      position: relative;
-    }
-
-    .button-box button::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: #fff;
-      padding: 6px 10px;
-      border-radius: 5px;
-      font-size: 0.75rem;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.3s ease;
-    }
-
-    .button-box button:hover::after {
-      opacity: 1;
-    }
-
-    .button-box button:hover {
-      background-color: #e6e6e6;
-      color: #0a0a23;
+      display: none;
     }
 
     .header {
@@ -104,13 +50,47 @@
     }
 
     .header .social-links {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
     .header .social-links a {
-      color: #0a0a23;
-      margin: 0 10px;
-      font-size: 1.5rem;
+      background-color: #0a0a23;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    .header .social-links a:hover {
+      background-color: #333;
+    }
+
+    .header .social-links a::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .header .social-links a:hover::after {
+      opacity: 1;
     }
 
     .container {
@@ -159,24 +139,14 @@
   </style>
 </head>
 <body>
-  <nav>
-    <div class="button-box">
-      <button onclick="document.getElementById('objective').scrollIntoView()" data-tooltip="View my career goals">Objective</button>
-      <button onclick="document.getElementById('skills').scrollIntoView()" data-tooltip="See what tools I use">Skills</button>
-      <button onclick="document.getElementById('experience').scrollIntoView()" data-tooltip="Explore my work history">Experience</button>
-      <button onclick="document.getElementById('education').scrollIntoView()" data-tooltip="View my educational background">Education</button>
-      <button onclick="document.getElementById('recognition').scrollIntoView()" data-tooltip="Achievements and awards">Recognition</button>
-    </div>
-  </nav>
-
   <div class="header">
     <img src="3M6A3911.jpg" alt="Shaik Afrid" class="profile-pic">
     <h1>Shaik Mahammed Afrid</h1>
     <p>Automation Test Engineer | QA Specialist | Banking Domain</p>
     <p>📧 <a style="color: #0a0a23;" href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📍 Bengaluru, India</p>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank" data-tooltip="Visit my LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank" data-tooltip="View my GitHub Projects"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </div>
 
