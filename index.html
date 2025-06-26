@@ -87,7 +87,7 @@
       display: none;
       position: fixed;
       top: 0; left: 0;
-      background: navy;
+      background: #1c1c1c;
       height: 100%;
       width: 75%;
       max-width: 280px;
@@ -160,8 +160,29 @@
       .social-links a { width: 100%; text-align: center; }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const closeBtn = document.querySelector('.close-btn');
+      const navLinks = document.querySelectorAll('.mobile-menu a');
+
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.add('show');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('show');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('show');
+        });
+      });
+    });
+  </script>
 </head>
-<body>
 <body>
   <div id="preloader"><div class="loader"></div></div>
   <div id="progressBar"></div>
