@@ -20,9 +20,10 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #f4f5f7;
       color: #1c1c1e;
+      overflow-x: hidden;
     }
 
-    /* Preloader */
+    /* Loader */
     #preloader {
       position: fixed;
       top: 0;
@@ -36,7 +37,7 @@
       z-index: 9999;
     }
 
-    #preloader .loader {
+    .loader {
       border: 6px solid #f3f3f3;
       border-top: 6px solid #00bcd4;
       border-radius: 50%;
@@ -50,24 +51,35 @@
       100% { transform: rotate(360deg);}
     }
 
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease-out;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
     .top-footer {
       background: #0a0a23;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 998;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.7rem 1rem;
     }
 
-    .top-footer .nav-buttons {
+    .nav-buttons {
       display: flex;
       gap: 12px;
     }
 
-    .top-footer .nav-buttons a,
-    .top-footer .top-contact a {
+    .nav-buttons a,
+    .top-contact a {
       color: #fff;
       background-color: #1f1f3d;
       padding: 6px 12px;
@@ -76,10 +88,11 @@
       text-decoration: none;
       font-weight: 600;
       position: relative;
+      overflow: hidden;
       transition: transform 0.3s ease;
     }
 
-    .top-footer a::after {
+    .nav-buttons a::after {
       content: attr(data-tooltip);
       position: absolute;
       bottom: 130%;
@@ -90,28 +103,49 @@
       padding: 5px 10px;
       border-radius: 4px;
       font-size: 0.75rem;
-      white-space: nowrap;
       opacity: 0;
       transition: opacity 0.3s;
       pointer-events: none;
     }
 
-    .top-footer a:hover::after {
+    .nav-buttons a:hover::after {
       opacity: 1;
     }
 
-    .top-footer a:hover {
+    .nav-buttons a:active::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation: ripple 0.6s linear;
+      z-index: 0;
+    }
+
+    @keyframes ripple {
+      to {
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+    }
+
+    .nav-buttons a:hover {
       transform: scale(1.05);
       background-color: #2d2d6a;
     }
 
-    .top-footer .top-contact {
+    .top-contact {
       display: flex;
       gap: 10px;
       align-items: center;
     }
 
-    .top-footer .top-contact i {
+    .top-contact i {
       margin-right: 5px;
     }
 
@@ -123,32 +157,50 @@
       border-bottom: 2px solid #e0e0e0;
     }
 
-    .header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .header p {
-      font-size: 1.2rem;
-    }
-
-    .header .profile-pic {
+    .profile-pic {
       width: 140px;
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #0a0a23;
       margin-bottom: 1rem;
+      transition: transform 0.5s ease;
     }
 
-    .header .social-links {
+    .profile-pic:hover {
+      transform: scale(1.05) rotate(1deg);
+    }
+
+    .header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .typewriter {
+      font-size: 1.2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #0a0a23;
+      animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .social-links {
       margin-top: 1.5rem;
       display: flex;
       justify-content: center;
       gap: 20px;
     }
 
-    .header .social-links a {
+    .social-links a {
       background-color: #0a0a23;
       color: white;
       padding: 10px 18px;
@@ -156,33 +208,12 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
-      position: relative;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
-    .header .social-links a:hover {
-      background-color: #333;
-    }
-
-    .header .social-links a::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: #fff;
-      padding: 6px 10px;
-      border-radius: 5px;
-      font-size: 0.75rem;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.3s ease;
-    }
-
-    .header .social-links a:hover::after {
-      opacity: 1;
+    .social-links a:hover {
+      background-color: #1d1d5c;
+      transform: scale(1.1);
     }
 
     .container {
@@ -232,12 +263,10 @@
 </head>
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="loader"></div>
-  </div>
+  <!-- Loader -->
+  <div id="preloader"><div class="loader"></div></div>
 
-  <!-- Main Content -->
+  <!-- Navbar -->
   <div class="top-footer">
     <div class="nav-buttons">
       <a href="#objective" data-tooltip="Career Goals">Objective</a>
@@ -252,24 +281,26 @@
     </div>
   </div>
 
-  <div class="header">
+  <!-- Header -->
+  <div class="header fade-up">
     <img src="3M6A3911.jpg" alt="Shaik Afrid" class="profile-pic">
     <h1>Shaik Mahammed Afrid</h1>
-    <p>Automation Test Engineer | QA Specialist | Banking Domain</p>
+    <p class="typewriter">Automation Test Engineer | QA Specialist | Banking Domain</p>
     <p>📧 <a style="color: #0a0a23;" href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📍 Bengaluru, India</p>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank" data-tooltip="Visit my LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank" data-tooltip="View my GitHub Projects"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </div>
 
+  <!-- Main Sections -->
   <div class="container">
-    <section id="objective">
+    <section id="objective" class="fade-up">
       <h2>🎯 Objective</h2>
       <p>Techno-functional expert with 3 years in IT, skilled in functional and automation testing using Selenium, Appium, Java, TestNG and Cucumber with Bank Domain experience. Aiming to leverage my skills to contribute to a dynamic team and continue learning in the evolving software testing field.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="fade-up">
       <h2>🛠️ Key Skills</h2>
       <ul>
         <li>Selenium WebDriver, Appium, Java, TestNG, Maven</li>
@@ -279,7 +310,7 @@
       </ul>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="fade-up">
       <h2>💼 Work Experience</h2>
       <h3>Senior Software Test Engineer – DSEdify @ Dyashin (Apr 2024 – Present)</h3>
       <ul>
@@ -308,12 +339,12 @@
       </ul>
     </section>
 
-    <section id="education">
+    <section id="education" class="fade-up">
       <h2>🎓 Education</h2>
       <p><strong>B.Tech in Electrical & Electronics Engineering</strong> (2018 – 2021)<br/>G. Pullaiah College of Engineering & Technology, JNTU Anantapur</p>
     </section>
 
-    <section id="recognition">
+    <section id="recognition" class="fade-up">
       <h2>🏆 Recognition & Accomplishments</h2>
       <ul>
         <li>Received commendation for validating critical banking payment features flawlessly.</li>
@@ -321,23 +352,33 @@
         <li>Recognized for UI/UX QA insights that improved end-user accessibility.</li>
       </ul>
     </section>
-
-    
   </div>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 Shaik Mahammed Afrid 
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // Hide preloader when page finishes loading
-    window.addEventListener("load", function() {
-      const preloader = document.getElementById("preloader");
-      preloader.style.opacity = "0";
-      preloader.style.transition = "opacity 0.8s ease";
+    window.addEventListener("load", function () {
+      document.getElementById("preloader").style.opacity = "0";
+      document.getElementById("preloader").style.transition = "opacity 0.7s ease";
       setTimeout(() => {
-        preloader.style.display = "none";
-      }, 800);
+        document.getElementById("preloader").style.display = "none";
+      }, 700);
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
     });
   </script>
 </body>
