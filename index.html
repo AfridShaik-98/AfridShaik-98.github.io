@@ -1,148 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shaik Mahammed Afrid | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shaik Mahammed Afrid | QA Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f8f9fa;
-      color: #212529;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
     }
-    header {
-      background: #0d6efd;
-      color: #fff;
-      padding: 2rem 0;
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f9fafc, #e3f2fd);
+      color: #333;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #0d6efd;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .header {
+      background: linear-gradient(to right, #007bff, #00c6ff);
+      color: white;
+      padding: 3rem 1rem;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
+
+    .header h1 {
       font-size: 2.5rem;
     }
-    header p {
-      margin: 0.3rem;
+
+    .header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
     }
+
     .container {
-      width: 90%;
-      max-width: 1000px;
+      width: 85%;
       margin: auto;
       padding: 2rem 0;
     }
-    .section {
-      background: #fff;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .section h2 {
-      color: #0d6efd;
+
+    section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: white;
       border-left: 5px solid #0d6efd;
-      padding-left: 0.5rem;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
+
+    section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: #0d6efd;
+    }
+
     ul {
-      list-style: none;
+      list-style-type: none;
       padding: 0;
     }
+
     ul li::before {
-      content: "✅ ";
+      content: "💡 ";
     }
+
     li {
       margin-bottom: 0.5rem;
     }
-    h3 {
-      color: #495057;
-      margin-top: 1.2rem;
+
+    .links {
+      text-align: center;
+      margin-top: 2rem;
     }
+
+    .links a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #0d6efd;
+      font-size: 1.2rem;
+    }
+
+    .links a:hover {
+      color: #0056b3;
+    }
+
     footer {
       text-align: center;
-      padding: 1.5rem 0;
       background: #0d6efd;
-      color: #fff;
-      font-weight: bold;
+      color: white;
+      padding: 1.5rem 0;
     }
-    a {
-      color: #ffc107;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+
+    .graphic-placeholder {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <nav>
+    <a href="#objective">🎯 Objective</a>
+    <a href="#skills">🛠️ Skills</a>
+    <a href="#experience">💼 Experience</a>
+    <a href="#education">🎓 Education</a>
+    <a href="#recognition">🏆 Recognition</a>
+    <a href="#contact">📬 Contact</a>
+  </nav>
+
+  <div class="header">
     <h1>Shaik Mahammed Afrid</h1>
-    <p>📧 <a href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📞 9133083182</p>
-    <p>📍 Bengaluru, Karnataka</p>
-  </header>
+    <p>Automation Test Engineer | QA Specialist | Banking Domain</p>
+    <p>📧 <a style="color: #fff;" href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📍 Bengaluru, India</p>
+  </div>
 
   <div class="container">
 
-    <section class="section">
+    <section id="objective">
       <h2>🎯 Objective</h2>
-      <p>Techno-functional expert with 3 years in IT, skilled in functional and automation testing using Selenium, Appium, Java, TestNG, and Cucumber with Bank Domain experience. Aiming to leverage my skills to contribute to a dynamic team and continue learning in the evolving software testing field.</p>
+      <p>Techno-functional QA expert with 3+ years of experience in functional & automation testing using Selenium, Appium, TestNG, Java, Cucumber. Specialized in banking domain projects and mobile/web app validation.</p>
     </section>
 
-    <section class="section">
+    <section id="skills">
       <h2>🛠️ Key Skills</h2>
       <ul>
-        <li>Selenium WebDriver</li>
-        <li>Java</li>
-        <li>TestNG</li>
-        <li>Cucumber</li>
-        <li>Maven</li>
-        <li>TDD</li>
-        <li>Functional Testing</li>
-        <li>Regression Testing</li>
-        <li>Postman</li>
-        <li>Mainframes</li>
-        <li>Appium</li>
-        <li>Agile Scrum</li>
-        <li>Waterfall</li>
-        <li>Android Studio</li>
+        <li>Selenium WebDriver, Appium, Java</li>
+        <li>TestNG, Maven, Cucumber, TDD</li>
+        <li>Postman, Mainframes, Android Studio</li>
+        <li>Manual Testing, Regression Testing, Agile/Scrum</li>
+        <li>GitHub, Jenkins, CI/CD Integration</li>
       </ul>
     </section>
 
-    <section class="section">
+    <section id="experience">
       <h2>💼 Work Experience</h2>
 
-      <h3>Senior Software Test Engineer @ DSEdify (Apr 2024 – Present)</h3>
-      <p>✔️ Tested course catalog, payment integrations, student dashboards, real-time notifications, and progress tracking features.</p>
-      <p>✔️ Led secure payment validation and mentored junior testers.</p>
+      <h3>🔹 Senior Software Test Engineer @ Dyashin (Apr 2024 – Present)</h3>
+      <p>✅ Built and tested real-time dashboards, enrollment systems, payment flows & admin portal with detailed test cases.</p>
 
-      <h3>Senior Software Test Engineer @ LBB / OneBill</h3>
-      <p>✔️ Tested Android/iOS broadband app for account management, plan upgrades, service requests, and multilingual support.</p>
-      <p>✔️ Conducted regression testing and end-to-end validation for payment gateways.</p>
-
-      <h3>Associate Software Engineer @ Testyantra (Feb 2022 – Apr 2023)</h3>
-      <p>✔️ Worked on banking applications like VISTA (PayNext, Paytm, Yes Bank, Mosambee).</p>
-      <p>✔️ Led a team to design and implement test cases, report bugs, and manage client requirements.</p>
+      <h3>🔹 Associate Software Engineer @ Testyantra (Feb 2022 – Apr 2023)</h3>
+      <p>✅ Tested critical banking modules (VISTA - PayNext, Paytm, Yes Bank) and led test teams on client-facing projects.</p>
     </section>
 
-    <section class="section">
+    <section id="education">
       <h2>🎓 Education</h2>
       <p><strong>B.Tech in Electrical & Electronics Engineering (2018 – 2021)</strong></p>
-      <p>G. Pullaiah College of Engineering and Technology, JNTU Anantapur</p>
+      <p>G. Pullaiah College of Engineering & Technology, JNTU Anantapur</p>
     </section>
 
-    <section class="section">
-      <h2>🏆 Recognitions & Accomplishments</h2>
+    <section id="recognition">
+      <h2>🏆 Recognition & Accomplishments</h2>
       <ul>
-        <li>👏 Commended by client for validating critical functionalities with precision and reliability.</li>
-        <li>🚀 Optimized regression testing using CI/CD pipelines—achieved 20% faster execution.</li>
+        <li>Received client commendation for validating critical payment functionality.</li>
+        <li>Improved regression testing pipeline by 20% using CI/CD automation.</li>
       </ul>
     </section>
+
+    <section id="contact">
+      <h2>📬 Connect with Me</h2>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </section>
+
+    <div class="graphic-placeholder">
+      🌐 [Placeholder: Add graphs, charts or screenshots of frameworks/test reports here]
+    </div>
 
   </div>
 
   <footer>
-    &copy; 2024 Shaik Mahammed Afrid — Passionate about quality ✨
+    &copy; 2025 Shaik Mahammed Afrid | Built with ❤️ & Java
   </footer>
+
 </body>
 </html>
