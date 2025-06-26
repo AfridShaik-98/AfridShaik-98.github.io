@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shaik Mahammed Afrid | QA Portfolio</title>
   <meta name="description" content="Shaik Mahammed Afrid - Automation Test Engineer." />
-  <link rel="icon" href="https://raw.githubusercontent.com/AfridShaik-98/AfridShaik-98.github.io/main/favicon.png.png" />
+  <link rel="icon" href="https://raw.githubusercontent.com/AfridShaik-98/AfridShaik-98.github.io/main/favicon.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -70,6 +70,10 @@
       padding: 6px 12px; border-radius: 5px;
       font-size: 0.9rem; font-weight: 600;
       text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .nav-buttons a:hover, .top-contact a:hover {
+      background: #2d2d60;
     }
 
     .hamburger {
@@ -112,6 +116,10 @@
       padding: 10px;
       background: #1f1f3d;
       border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .mobile-menu a:hover {
+      background: #333;
     }
     .mobile-menu .close-btn {
       background: #ff4444;
@@ -152,6 +160,10 @@
       padding: 10px 18px; border-radius: 6px;
       font-weight: 600; font-size: 1rem;
       text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .social-links a:hover {
+      background: #1f1f3d;
     }
 
     footer {
@@ -170,7 +182,7 @@
   </style>
 </head>
 <body>
-  <div id="preloader"><div class="loader"></div></div>
+ <div id="preloader"><div class="loader"></div></div>
   <div id="progressBar"></div>
 
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -187,7 +199,6 @@
     <a href="tel:+919133083182">📞 Call</a>
     <div class="close-btn" onclick="toggleMenu()">✖ Close</div>
   </div>
-
   <div class="top-footer">
     <div class="nav-buttons">
       <a href="#objective">🎯 Objective</a>
@@ -273,24 +284,34 @@
     </div>
   </footer>
 
-  <script>
-    window.addEventListener("load", () => {
-      document.getElementById("preloader").style.display = "none";
-    });
+ <script>
+  window.addEventListener("load", () => {
+    document.getElementById("preloader").style.display = "none";
+  });
 
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const hamburger = document.getElementById('hamburger');
-      menu.classList.toggle('show');
-      hamburger.style.display = menu.classList.contains('show') ? 'none' : 'block';
-    }
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburger');
+    menu.classList.toggle('show');
+    hamburger.style.display = menu.classList.contains('show') ? 'none' : 'block';
+  }
 
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      document.getElementById("progressBar").style.width = progress + "%";
+  // Close menu when any link is clicked
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.remove('show');
+      document.getElementById('hamburger').style.display = 'block';
     });
-  </script>
+  });
+
+  // Scroll progress bar logic
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    document.getElementById("progressBar").style.width = progress + "%";
+  });
+</script>
+
 </body>
 </html>
