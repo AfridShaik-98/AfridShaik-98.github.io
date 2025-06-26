@@ -24,7 +24,11 @@
 
     .top-footer {
       background: #0a0a23;
+      position: sticky;
+      top: 0;
+      z-index: 999;
       display: flex;
+      justify-content: space-between;
       align-items: center;
       padding: 0.7rem 1rem;
     }
@@ -34,7 +38,8 @@
       gap: 12px;
     }
 
-    .top-footer a {
+    .top-footer .nav-buttons a,
+    .top-footer .top-contact a {
       color: #fff;
       background-color: #1f1f3d;
       padding: 6px 12px;
@@ -70,6 +75,16 @@
     .top-footer a:hover {
       transform: scale(1.05);
       background-color: #2d2d6a;
+    }
+
+    .top-footer .top-contact {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .top-footer .top-contact i {
+      margin-right: 5px;
     }
 
     .header {
@@ -196,6 +211,10 @@
       <a href="#education" data-tooltip="Academic Info">Education</a>
       <a href="#recognition" data-tooltip="Awards & Recognition">Recognition</a>
     </div>
+    <div class="top-contact">
+      <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank" data-tooltip="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="tel:+919876543210" data-tooltip="Call Me"><i class="fas fa-phone-alt"></i> 🇮🇳 +91 9876543210</a>
+    </div>
   </div>
 
   <div class="header">
@@ -208,6 +227,7 @@
       <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank" data-tooltip="View my GitHub Projects"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </div>
+
 
   <div class="container">
     <section id="objective">
