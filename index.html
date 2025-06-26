@@ -22,6 +22,34 @@
       color: #1c1c1e;
     }
 
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: #0a0a23;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #preloader .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #00bcd4;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
     .top-footer {
       background: #0a0a23;
       position: sticky;
@@ -203,6 +231,13 @@
   </style>
 </head>
 <body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Main Content -->
   <div class="top-footer">
     <div class="nav-buttons">
       <a href="#objective" data-tooltip="Career Goals">Objective</a>
@@ -227,7 +262,6 @@
       <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank" data-tooltip="View my GitHub Projects"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </div>
-
 
   <div class="container">
     <section id="objective">
@@ -298,16 +332,15 @@
   </footer>
 
   <script>
-    const sections = document.querySelectorAll("section");
-    window.addEventListener("scroll", () => {
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.85) {
-          section.classList.add("show");
-        }
-      });
+    // Hide preloader when page finishes loading
+    window.addEventListener("load", function() {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = "0";
+      preloader.style.transition = "opacity 0.8s ease";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 800);
     });
   </script>
-
 </body>
 </html>
