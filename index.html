@@ -26,24 +26,55 @@
       background-color: #0a0a23;
       color: white;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 1rem 2rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
-    .nav-left a,
-    .nav-right a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 600;
-      transition: 0.3s;
+    nav .button-box {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .nav-left a:hover,
-    .nav-right a:hover {
-      text-decoration: underline;
+    .button-box button {
+      background-color: #ffffff;
+      color: #0a0a23;
+      border: 2px solid #ffffff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      position: relative;
+    }
+
+    .button-box button::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .button-box button:hover::after {
+      opacity: 1;
+    }
+
+    .button-box button:hover {
+      background-color: #e6e6e6;
+      color: #0a0a23;
     }
 
     .header {
@@ -82,47 +113,6 @@
       font-size: 1.5rem;
     }
 
-    .button-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .button-box button {
-      background-color: #0a0a23;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s ease;
-      position: relative;
-    }
-
-    .button-box button::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: 120%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.3s;
-    }
-
-    .button-box button:hover::after {
-      opacity: 1;
-    }
-
     .container {
       width: 85%;
       margin: auto;
@@ -136,8 +126,6 @@
       border-left: 4px solid #0a0a23;
       border-radius: 8px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      opacity: 1 !important;
-      transform: none !important;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -172,16 +160,12 @@
 </head>
 <body>
   <nav>
-    <div class="nav-left">
-      <a href="#objective">🎯 Objective</a>
-      <a href="#skills">🛠️ Skills</a>
-      <a href="#experience">💼 Experience</a>
-      <a href="#education">🎓 Education</a>
-      <a href="#recognition">🏆 Recognition</a>
-    </div>
-    <div class="nav-right">
-      <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i></a>
+    <div class="button-box">
+      <button onclick="document.getElementById('objective').scrollIntoView()" data-tooltip="View my career goals">Objective</button>
+      <button onclick="document.getElementById('skills').scrollIntoView()" data-tooltip="See what tools I use">Skills</button>
+      <button onclick="document.getElementById('experience').scrollIntoView()" data-tooltip="Explore my work history">Experience</button>
+      <button onclick="document.getElementById('education').scrollIntoView()" data-tooltip="View my educational background">Education</button>
+      <button onclick="document.getElementById('recognition').scrollIntoView()" data-tooltip="Achievements and awards">Recognition</button>
     </div>
   </nav>
 
@@ -193,13 +177,6 @@
     <div class="social-links">
       <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    </div>
-    <div class="button-box">
-      <button onclick="document.getElementById('objective').scrollIntoView()" data-tooltip="View my career goals">Objective</button>
-      <button onclick="document.getElementById('skills').scrollIntoView()" data-tooltip="See what tools I use">Skills</button>
-      <button onclick="document.getElementById('experience').scrollIntoView()" data-tooltip="Explore my work history">Experience</button>
-      <button onclick="document.getElementById('education').scrollIntoView()" data-tooltip="View my educational background">Education</button>
-      <button onclick="document.getElementById('recognition').scrollIntoView()" data-tooltip="Achievements and awards">Recognition</button>
     </div>
   </div>
 
@@ -261,8 +238,7 @@
   </div>
 
   <footer>
-    &copy; 2025 Shaik Mahammed Afrid 
+    &copy; 2025 Shaik Mahammed Afrid | Built with ❤️ using HTML & CSS
   </footer>
-
 </body>
 </html>
