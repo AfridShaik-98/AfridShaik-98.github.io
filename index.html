@@ -44,7 +44,15 @@
       margin-bottom: 1rem;
       transition: transform 0.5s ease;
     }
-    .profile-pic:hover { transform: scale(1.05) rotate(2deg); }
+    .profile-pic:hover {
+      transform: scale(1.05) rotate(2deg);
+      animation: pulseGlow 1.2s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      from { box-shadow: 0 0 0px #00bcd4; }
+      to { box-shadow: 0 0 15px #00bcd4; }
+    }
+
     .header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
     .typewriter {
       font-size: 1.2rem; white-space: nowrap; overflow: hidden;
@@ -74,6 +82,7 @@
     }
     .nav-buttons a:hover, .top-contact a:hover {
       background: #2d2d60;
+      animation: bounce 0.4s;
     }
 
     .hamburger {
@@ -87,9 +96,8 @@
       left: 10px;
       z-index: 1001;
     }
-    .hamburger.show {
-      display: block;
-    }
+    .hamburger.show { display: block; }
+
     .mobile-menu {
       display: none;
       position: fixed;
@@ -101,11 +109,13 @@
       padding: 2rem 1rem;
       z-index: 1000;
       transform: translateX(-100%);
-      transition: 0.3s ease-in-out;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
     .mobile-menu.show {
       display: block;
       transform: translateX(0);
+      opacity: 1;
     }
     .mobile-menu a {
       display: block;
@@ -120,6 +130,7 @@
     }
     .mobile-menu a:hover {
       background: #333;
+      animation: bounce 0.4s;
     }
     .mobile-menu .close-btn {
       background: #ff4444;
@@ -145,6 +156,23 @@
       transform: scale(1.03);
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
+    section.fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @keyframes bounce {
+      0%   { transform: translateY(0); }
+      30%  { transform: translateY(-6px); }
+      60%  { transform: translateY(2px); }
+      100% { transform: translateY(0); }
+    }
+
     h2 { color: #0a0a23; margin-bottom: 1rem; font-size: 1.9rem; }
     ul { list-style: none; }
     ul li::before { content: "\1F4A1 "; }
@@ -182,7 +210,7 @@
   </style>
 </head>
 <body>
- <div id="preloader"><div class="loader"></div></div>
+  <div id="preloader"><div class="loader"></div></div>
   <div id="progressBar"></div>
 
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -284,34 +312,45 @@
     </div>
   </footer>
 
- <script>
-  window.addEventListener("load", () => {
-    document.getElementById("preloader").style.display = "none";
-  });
-
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const hamburger = document.getElementById('hamburger');
-    menu.classList.toggle('show');
-    hamburger.style.display = menu.classList.contains('show') ? 'none' : 'block';
-  }
-
-  // Close menu when any link is clicked
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.remove('show');
-      document.getElementById('hamburger').style.display = 'block';
+<script>
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
     });
-  });
 
-  // Scroll progress bar logic
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    document.getElementById("progressBar").style.width = progress + "%";
-  });
-</script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const hamburger = document.getElementById('hamburger');
+      menu.classList.toggle('show');
+      hamburger.style.display = menu.classList.contains('show') ? 'none' : 'block';
+    }
 
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('show');
+        document.getElementById('hamburger').style.display = 'block';
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById("progressBar").style.width = progress + "%";
+    });
+
+    // Fade-in section animation on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('fade-in');
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
