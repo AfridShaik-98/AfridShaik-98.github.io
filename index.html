@@ -2,201 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shaik Mahammed Afrid | QA Portfolio</title>
-  <meta name="description" content="Shaik Mahammed Afrid - Automation Test Engineer with 3+ years of experience." />
-  <meta name="keywords" content="QA Engineer, Selenium, Java, TestNG, Cucumber, Appium" />
-  <meta name="author" content="Shaik Mahammed Afrid" />
+  <meta name="description" content="Shaik Mahammed Afrid - Automation Test Engineer." />
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/AfridShaik-98/AfridShaik-98.github.io/main/favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f5f7;
-      color: #1c1c1e;
+      background: #f4f5f7; color: #1c1c1e;
       overflow-x: hidden;
     }
-
+    
+    /* Preloader */
     #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #0a0a23;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      position: fixed; inset: 0; background: #0a0a23;
+      display: flex; align-items: center; justify-content: center;
       z-index: 9999;
     }
-
     .loader {
       border: 6px solid #f3f3f3;
       border-top: 6px solid #00bcd4;
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
+      width: 60px; height: 60px;
       animation: spin 1s linear infinite;
     }
-
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% { transform: rotate(0); } 100% { transform: rotate(360deg); }
     }
-
+    
+    /* Bounce nav link */
+    .nav-buttons a:hover {
+      animation: bounce 0.5s;
+      transform: scale(1.05);
+      background-color: #2d2d6a;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    /* Pulse social icons */
+    .social-links a:hover {
+      animation: pulse 1s infinite;
+      background-color: #1d1d5c;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Fade sections on scroll */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.7s ease-out;
     }
-
     .fade-up.show {
       opacity: 1;
       transform: translateY(0);
     }
-
-    .top-footer {
-      background: #0a0a23;
-      position: sticky;
-      top: 0;
-      z-index: 998;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.7rem 1rem;
-      flex-wrap: wrap;
+    
+    /* Section hover shadow */
+    section:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
+      transition: 0.3s ease-out;
     }
-
-    .nav-buttons {
-      display: flex;
-      gap: 12px;
-    }
-
-    .top-contact {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    @media (max-width: 600px) {
-      .nav-buttons {
-        width: 100%;
-        justify-content: flex-start;
-        margin-bottom: 0.5rem;
-      }
-
-      .top-contact {
-        margin-left: auto;
-        flex-direction: row;
-        justify-content: flex-end;
-        width: auto;
-      }
-
-      .top-contact a {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-      }
-    }
-
-    .top-contact a,
-    .nav-buttons a {
-      color: #fff;
-      background-color: #1f1f3d;
-      padding: 6px 12px;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      text-decoration: none;
-      font-weight: 600;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-
-    .top-contact a:hover,
-    .nav-buttons a:hover {
-      background-color: #2d2d6a;
-      transform: scale(1.05);
-    }
-
+    
+    /* Header */
     .header {
-      background: #ffffff;
-      padding: 3rem 1rem;
-      text-align: center;
+      background: #fff; color: #1c1c1e;
+      text-align: center; padding: 3rem 1rem;
+      border-bottom: 2px solid #e0e0e0;
     }
-
     .profile-pic {
-      width: 140px;
-      height: 140px;
+      width: 140px; height: 140px;
       border-radius: 50%;
-      object-fit: cover;
       border: 4px solid #0a0a23;
       margin-bottom: 1rem;
+      transition: transform 0.5s ease;
     }
-
+    .profile-pic:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
     .header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem; margin-bottom: 0.5rem;
     }
-
     .typewriter {
-      font-size: 1.2rem;
-      white-space: nowrap;
+      font-size: 1.2rem; white-space: nowrap;
       overflow: hidden;
-      animation: typing 3s steps(40, end);
+      animation: typing 3s steps(40,end), blink-caret .75s step-end infinite;
     }
-
     @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+      from { width: 0; } to { width: 100%; }
     }
-
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #1c1c1e; }
+    }
+    
+    /* Layout */
+    .top-footer {
+      background: #0a0a23; position: sticky; top: 0;
+      z-index: 998; padding: 0.7rem 1rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap;
+    }
+    .nav-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .nav-buttons a, .top-contact a {
+      background: #1f1f3d; color: #fff;
+      padding: 6px 12px; border-radius: 5px;
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; position: relative;
+      overflow: hidden;
+    }
+    .top-contact { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .top-contact i { margin-right: 5px; }
+    
     .social-links {
       margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+      display: flex; gap: 20px;
+      justify-content: center; flex-wrap: wrap;
     }
-
     .social-links a {
-      background-color: #0a0a23;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 6px;
+      background: #0a0a23; color: #fff;
+      padding: 10px 18px; border-radius: 6px;
+      font-weight: 600; font-size: 1rem;
       text-decoration: none;
-      font-weight: 600;
     }
-
+    
     .container {
-      width: 85%;
-      margin: auto;
+      width: 85%; margin: auto;
       padding: 2rem 0;
+      transition: 0.3s ease;
     }
-
     section {
       margin-bottom: 3rem;
       padding: 2rem;
-      background: #ffffff;
+      background: #fff;
       border-left: 4px solid #0a0a23;
       border-radius: 8px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
     }
-
+    h2 { color: #0a0a23; margin-bottom: 1rem; font-size: 1.9rem; }
+    ul { list-style: none; }
+    ul li::before { content: "💡 "; }
+    li { margin-bottom: 0.5rem; }
+    
     footer {
-      background: #0a0a23;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 0;
+      background: #0a0a23; color: #fff;
+      text-align: center; padding: 1.5rem 0;
+    }
+    
+    /* Mobile */
+    @media (max-width: 600px) {
+      .header h1 { font-size: 2rem; }
+      .typewriter { font-size: 1rem; }
+      .profile-pic { width: 100px; height: 100px; }
+      .container { width: 95%; padding: 1rem 0; }
+      section { padding: 1rem; }
+      .social-links { flex-direction: column; gap: 10px; }
+      .social-links a { width: 100%; text-align: center; }
+      .nav-buttons a, .top-contact a { font-size: 0.8rem; padding: 5px 10px; }
     }
   </style>
 </head>
 <body>
   <div id="preloader"><div class="loader"></div></div>
-
+  
   <div class="top-footer">
     <div class="nav-buttons">
       <a href="#objective">Objective</a>
@@ -207,84 +187,92 @@
     </div>
     <div class="top-contact">
       <a href="https://linkedin.com/in/shaik-mahammed-afrid" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="tel:+919133083182"><i class="fas fa-phone-alt"></i> +91 91330 83182</a>
+      <a href="tel:+919133083182"><i class="fas fa-phone-alt"></i> +91 91330 83182</a>
     </div>
   </div>
-
+  
   <div class="header fade-up">
     <img src="3M6A3911.jpg" alt="Shaik Afrid" class="profile-pic">
     <h1>Shaik Mahammed Afrid</h1>
     <p class="typewriter">Automation Test Engineer | QA Specialist</p>
     <p>📧 <a href="mailto:Shaikafrid0988@gmail.com">Shaikafrid0988@gmail.com</a> | 📍 Bengaluru, India</p>
-    <div class="social-links">
+    <div class="social-links fade-up">
       <a href="https://linkedin.com/in/shaik-mahammed-afrid" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="https://github.com/AfridShaik-98/Selenium-Full" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
   </div>
-
+  
   <div class="container">
     <section id="objective" class="fade-up">
       <h2>🎯 Objective</h2>
-      <p>3+ years of experience in Automation & Functional Testing using Selenium, Appium, TestNG, and Java in the Banking Domain.</p>
+      <p>Techno-functional expert with 3+ years in IT, skilled in functional and automation testing using Selenium, Appium, Java, TestNG and Cucumber...</p>
     </section>
 
     <section id="skills" class="fade-up">
       <h2>🛠️ Key Skills</h2>
       <ul>
-        <li>Selenium, Appium, Java, TestNG, Maven</li>
-        <li>Functional Testing, Regression Testing, Agile</li>
-        <li>Postman, Android Studio, GitHub, Jenkins</li>
+        <li>Selenium WebDriver, Appium, Java, TestNG, Maven</li>
+        <li>Functional Testing, Regression Testing, TDD, Agile, Scrum, Waterfall</li>
+        <li>Postman, Mainframes, Android Studio</li>
+        <li>Automation Scripting, CI/CD, GitHub, Jenkins</li>
       </ul>
     </section>
 
     <section id="experience" class="fade-up">
       <h2>💼 Work Experience</h2>
-      <h3>Senior Software Test Engineer @ Dyashin (2024 – Present)</h3>
+      <h3>Senior Software Test Engineer – Dyashin (Apr 2024 – Present)</h3>
       <ul>
-        <li>Led cross-device and cross-browser testing for portals and dashboards.</li>
-        <li>Mentored juniors, wrote test plans, coordinated team efforts.</li>
+        <li>Led testing of course catalog, dashboards, admin portals with real-time notifications & payments.</li>
+        <li>Cross-browser and cross-device testing, team coordination, stakeholder reporting.</li>
+        <li>Mentored junior testers.</li>
       </ul>
-      <h3>Associate Software Engineer @ TestYantra (2022 – 2024)</h3>
+
+      <h3>Associate Software Engineer – TestYantra (Feb 2022 – Apr 2024)</h3>
       <ul>
-        <li>End-to-end QA lifecycle management for VISTA app in PayNext, Yes Bank, Paytm.</li>
+        <li>Managed QA lifecycle for VISTA banking app (PayNext, Yes Bank, Paytm).</li>
+        <li>Led end-to-end testing of NETC, M‑Portal, User Management.</li>
+        <li>Used GitLab for bug tracking and demo presentations.</li>
+      </ul>
+
+      <h3>Projects:</h3>
+      <ul>
+        <li>ServiceDesk App – Manual & Appium automation with CI/CD (Jenkins + GitHub)</li>
+        <li>Dyashin Website – Functional & cross-browser testing</li>
       </ul>
     </section>
 
     <section id="education" class="fade-up">
       <h2>🎓 Education</h2>
-      <p><strong>B.Tech in EEE</strong>, 2018 – 2021<br>JNTU Anantapur</p>
+      <p><strong>B.Tech in Electrical & Electronics Engineering</strong> (2018–2021)<br/>G. Pullaiah College of Engineering & Technology, JNTU Anantapur</p>
     </section>
 
     <section id="recognition" class="fade-up">
       <h2>🏆 Recognition & Accomplishments</h2>
       <ul>
-        <li>Reduced test cycle time by 20% using automation & CI/CD.</li>
-        <li>Awarded for QA UI/UX feedback improving accessibility.</li>
+        <li>Commendation for flawless banking payment feature validation.</li>
+        <li>Streamlined regression testing via CI/CD, reducing test cycle by 20%.</li>
+        <li>Recognized for UI/UX QA insights improving end-user accessibility.</li>
       </ul>
     </section>
   </div>
-
+  
   <footer>
-    &copy; Shaik Mahammed Afrid | <a href="mailto:Shaikafrid0988@gmail.com" style="color: white; text-decoration: underline;">Email Me</a>
+    <div>
+      &copy; Shaik Mahammed Afrid |
+      <a href="mailto:Shaikafrid0988@gmail.com">📧 Shaikafrid0988@gmail.com</a> |
+      <a href="https://linkedin.com/in/shaik-mahammed-afrid" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+    </div>
   </footer>
-
+  
   <script>
     window.addEventListener("load", () => {
-      const loader = document.getElementById("preloader");
-      loader.style.opacity = "0";
-      loader.style.transition = "opacity 0.7s ease";
-      setTimeout(() => loader.style.display = "none", 700);
+      document.getElementById("preloader").style.display = "none";
     });
 
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
