@@ -131,6 +131,11 @@
       border-left: 4px solid #0a0a23;
       border-radius: 8px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease-in-out;
+    }
+    section:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     h2 { color: #0a0a23; margin-bottom: 1rem; font-size: 1.9rem; }
     ul { list-style: none; }
@@ -163,31 +168,6 @@
       .social-links a { width: 100%; text-align: center; }
     }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburger = document.querySelector('.hamburger');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      const closeBtn = document.querySelector('.close-btn');
-      const navLinks = document.querySelectorAll('.mobile-menu a');
-
-      hamburger.addEventListener('click', () => {
-        mobileMenu.classList.add('show');
-        hamburger.style.display = 'none';
-      });
-
-      closeBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('show');
-        hamburger.style.display = 'block';
-      });
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('show');
-          hamburger.style.display = 'block';
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   <div id="preloader"><div class="loader"></div></div>
