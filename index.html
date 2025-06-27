@@ -372,29 +372,6 @@ footer a:hover {
   }
 </style>
 
-<script>
-  function toggleDarkMode() {
-    const body = document.body;
-    const toggleBtnList = document.querySelectorAll('.dark-toggle');
-
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-
-    toggleBtnList.forEach(btn => {
-      btn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    });
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const isDark = document.body.classList.contains("dark-mode");
-    const toggleBtnList = document.querySelectorAll(".dark-toggle");
-
-    toggleBtnList.forEach(btn => {
-      btn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
-    });
-  });
-</script>
-
 </head>
 <body>
   <div id="preloader"><div class="loader"></div></div>
@@ -808,40 +785,30 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
     });
   </script>
 
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
+  
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggleButtons = document.querySelectorAll(".dark-toggle");
 
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const action = form.action;
-
-      try {
-        const response = await fetch(action, {
-          method: "POST",
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          status.innerHTML = "✅ Message sent successfully!";
-          status.style.color = "green";
-          form.reset();
-        } else {
-          status.innerHTML = "❌ There was a problem. Please try again.";
-          status.style.color = "red";
-        }
-      } catch (error) {
-        status.innerHTML = "❌ Network error. Please try again.";
-        status.style.color = "red";
-      }
+    // Set initial button text based on current mode
+    const isDark = body.classList.contains("dark-mode");
+    toggleButtons.forEach(btn => {
+      btn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
     });
-  </script>
+
+    // Add click event listener to toggle theme
+    toggleButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        const newMode = body.classList.contains("dark-mode");
+        toggleButtons.forEach(b => {
+          b.textContent = newMode ? "☀️ Light Mode" : "🌙 Dark Mode";
+        });
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
