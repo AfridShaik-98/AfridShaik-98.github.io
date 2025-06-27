@@ -476,48 +476,49 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
     </div>
   </div>
 
-  <style>
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+ <style>
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
+  .skill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: var(--section-bg);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .skill-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--section-bg);
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .skill-item img {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 600px) {
     .skill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      background: #fff;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      justify-content: flex-start;
     }
 
     .skill-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #f4f4f4;
-      padding: 5px 8px;
-      border-radius: 6px;
-      font-size: 14px;
+      font-size: 13px;
     }
-
-    .skill-item img {
-      width: 20px;
-      height: 20px;
-    }
-
-    @media (max-width: 600px) {
-      .skill-row {
-        justify-content: flex-start;
-      }
-
-      .skill-item {
-        font-size: 13px;
-      }
-    }
-  </style>
+  }
+</style>
 </section>
 
 
