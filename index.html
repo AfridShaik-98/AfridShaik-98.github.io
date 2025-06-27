@@ -7,9 +7,30 @@
   <meta name="description" content="Shaik Mahammed Afrid - Automation Test Engineer." />
   <link rel="icon" href="https://raw.githubusercontent.com/AfridShaik-98/AfridShaik-98.github.io/main/favicon.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', sans-serif; background: #f4f5f7; color: #1c1c1e; overflow-x: hidden; }
+
+    .success-popup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  animation: slideUp 0.5s ease;
+  z-index: 9999;
+}
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
 
     #preloader {
       position: fixed; inset: 0; background: #0a0a23;
@@ -372,6 +393,8 @@ footer a:hover {
   }
 </style>
 
+  
+
 </head>
 <body>
   <div id="preloader"><div class="loader"></div></div>
@@ -733,6 +756,9 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
         <button type="submit">Send Message</button>
         <p id="form-status" style="margin-top:10px;"></p>
       </form>
+      <div id="form-success" class="success-popup">
+  ✅ Message sent successfully to Afrid!
+</div>
     </section>
 
   </div>
@@ -810,9 +836,10 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
   });
 </script>
 
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("contact-form");
+  const popup = document.getElementById("form-success");
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -826,8 +853,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (response.ok) {
-        alert("✅ Message sent successfully to Afrid!");
+        popup.style.display = "block";
         form.reset();
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000);
       } else {
         alert("❌ Error: Please try again.");
       }
