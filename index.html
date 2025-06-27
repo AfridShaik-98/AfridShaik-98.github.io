@@ -276,16 +276,19 @@ footer a:hover {
     }
 
     .dark-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
       background: var(--section-bg);
       border: 1px solid var(--accent);
       color: var(--text);
-      padding: 8px 14px;
-      border-radius: 8px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
       cursor: pointer;
-      z-index: 1002;
+      transition: background 0.3s;
+    }
+
+    .dark-toggle:hover {
+      background: var(--accent);
+      color: #fff;
     }
 
     #contact {
@@ -323,7 +326,6 @@ footer a:hover {
 <body>
   <div id="preloader"><div class="loader"></div></div>
   <div id="progressBar"></div>
-  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
     <i class="fas fa-bars"></i>
@@ -351,6 +353,7 @@ footer a:hover {
     <div class="top-contact">
       <a href="https://www.linkedin.com/in/shaik-mahammed-afrid-633608226" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="tel:+919133083182"><i class="fas fa-phone-alt"></i> +91 91330 83182</a>
+      <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle</button>
     </div>
   </div>
 
