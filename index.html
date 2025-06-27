@@ -251,10 +251,79 @@ footer a:hover {
       .social-links a { width: 100%; text-align: center; }
     }
   </style>
+
+  <style>
+    :root {
+      --bg: #f4f5f7;
+      --text: #1c1c1e;
+      --section-bg: #fff;
+      --accent: #00bcd4;
+    }
+
+    body.dark-mode {
+      --bg: #1c1c1e;
+      --text: #f4f5f7;
+      --section-bg: #2a2a2e;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    section {
+      background: var(--section-bg);
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--section-bg);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    #contact {
+      background: var(--section-bg);
+      color: var(--text);
+      padding: 2rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    #contact input, #contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #contact button {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #contact button:hover {
+      background: #0097a7;
+    }
+  </style>
+
 </head>
 <body>
   <div id="preloader"><div class="loader"></div></div>
   <div id="progressBar"></div>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
     <i class="fas fa-bars"></i>
@@ -598,6 +667,18 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
         <li>Recognized for UI/UX QA insights improving end-user accessibility.</li>
       </ul>
     </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>📬 Contact Me</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
   </div>
 
   <footer>
@@ -647,5 +728,12 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
       observer.observe(section);
     });
   </script>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
 </body>
 </html>
