@@ -351,6 +351,50 @@ footer a:hover {
 
   </style>
 
+
+<style>
+  body {
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+  .dark-toggle {
+    background: var(--section-bg);
+    border: 1px solid var(--accent);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  .dark-toggle:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+</style>
+
+<script>
+  function toggleDarkMode() {
+    const body = document.body;
+    const toggleBtnList = document.querySelectorAll('.dark-toggle');
+
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+
+    toggleBtnList.forEach(btn => {
+      btn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const isDark = document.body.classList.contains("dark-mode");
+    const toggleBtnList = document.querySelectorAll(".dark-toggle");
+
+    toggleBtnList.forEach(btn => {
+      btn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    });
+  });
+</script>
+
 </head>
 <body>
   <div id="preloader"><div class="loader"></div></div>
