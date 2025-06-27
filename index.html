@@ -794,7 +794,7 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
     // Set initial button text based on current mode
     const isDark = body.classList.contains("dark-mode");
     toggleButtons.forEach(btn => {
-      btn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+      btn.textContent = isDark ? " ☀️ " : " 🌙 ";
     });
 
     // Add click event listener to toggle theme
@@ -803,7 +803,7 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
         body.classList.toggle("dark-mode");
         const newMode = body.classList.contains("dark-mode");
         toggleButtons.forEach(b => {
-          b.textContent = newMode ? "☀️ Light Mode" : "🌙 Dark Mode";
+          b.textContent = newMode ? " ☀️ " : " 🌙 ";
         });
       });
     });
@@ -826,7 +826,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       if (response.ok) {
-        alert("✅ Message sent successfully!");
+        alert("✅ Message sent successfully to Afrid!");
         form.reset();
       } else {
         alert("❌ Error: Please try again.");
