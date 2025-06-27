@@ -290,43 +290,83 @@ Dynamic and detail-oriented techno-functional professional with 3.6 years of exp
     </section>
 
     <!-- Skills -->
-    <section id="skills">
+   <section id="skills">
   <h2>🛠️ Key Skills</h2>
-  <ul style="list-style: none; padding: 0;">
-    <li>
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium" width="20" style="vertical-align: middle; margin-right: 8px;" />
+  <div class="skills-container">
+    <div class="skill-row">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium" />
       Selenium WebDriver
-      <img src="appium logo.png" alt="Appium" width="20" style="vertical-align: middle; margin: 0 8px;" />
+    </div>
+    <div class="skill-row">
+      <img src="appium logo.png" alt="Appium" />
       Appium
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="20" style="vertical-align: middle; margin: 0 8px;" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
       Java
-      <img src="TestNG.png" alt="TestNG" width="20" style="vertical-align: middle; margin: 0 8px;" />
+      <img src="TestNG.png" alt="TestNG" />
       TestNG
-      <img src="maven.png" alt="Maven" width="20" style="vertical-align: middle; margin-left: 8px;" />
+      <img src="maven.png" alt="Maven" />
       Maven
-    </li>
-    <li>
-      <img src="Agile.webp" alt="Agile" width="20" style="vertical-align: middle; margin-right: 8px;" />
+    </div>
+    <div class="skill-row">
+      <img src="Agile.webp" alt="Agile" />
       Functional Testing, Regression Testing, TDD, Agile, Scrum, Waterfall
-    </li>
-    <li>
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" width="20" style="vertical-align: middle; margin-right: 8px;" />
+    </div>
+    <div class="skill-row">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" />
       Postman
-      <img src="https://img.icons8.com/color/48/android-studio--v3.png" alt="Android Studio" width="20" style="vertical-align: middle; margin-left: 8px;" />
+      <img src="https://img.icons8.com/color/48/android-studio--v3.png" alt="Android Studio" />
       Android Studio
-    </li>
-    <li>
-      <img src="https://img.icons8.com/color/48/code.png" alt="Automation" width="20" style="vertical-align: middle; margin-right: 8px;" />
+    </div>
+    <div class="skill-row">
+      <img src="https://img.icons8.com/color/48/code.png" alt="Automation" />
       Automation Scripting
-      <img src="ci-cd.png" alt="CI/CD" width="20" style="vertical-align: middle; margin: 0 8px;" />
+      <img src="ci-cd.png" alt="CI/CD" />
       CI/CD
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="20" style="vertical-align: middle; margin: 0 8px;" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
       GitHub
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" width="20" style="vertical-align: middle; margin-left: 8px;" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" />
       Jenkins
-    </li>
-  </ul>
+    </div>
+  </div>
+
+  <style>
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .skill-row img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 600px) {
+      .skill-row {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .skill-row img {
+        margin-bottom: 4px;
+      }
+    }
+  </style>
 </section>
+
 <style>
   .project-title {
     font-weight: bold;
