@@ -373,30 +373,17 @@ footer a:hover {
 </style>
 
 <script>
-  // Ensure DOM is ready
-  document.addEventListener("DOMContentLoaded", () => {
+  function toggleDarkMode() {
     const body = document.body;
-    const toggleButtons = document.querySelectorAll(".dark-toggle");
+    const toggleBtnList = document.querySelectorAll('.dark-toggle');
 
-    // Set initial icon based on current mode
-    const isDark = body.classList.contains("dark-mode");
-    toggleButtons.forEach(btn => {
-      btn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+
+    toggleBtnList.forEach(btn => {
+      btn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
     });
-
-    // Add click event to all toggle buttons
-    toggleButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        const isNowDark = body.classList.contains("dark-mode");
-        toggleButtons.forEach(b => {
-          b.textContent = isNowDark ? "☀️ Light Mode" : "🌙 Dark Mode";
-        });
-      });
-    });
-  });
-</script>
-
+  }
 
   window.addEventListener("DOMContentLoaded", () => {
     const isDark = document.body.classList.contains("dark-mode");
